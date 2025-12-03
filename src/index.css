@@ -32,7 +32,7 @@
   .btn-secondary {
     @apply bg-white text-gray-700 shadow-sm border border-gray-200
            hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900
-           dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 dark:hover:bg-gray-750 dark:hover:text-white dark:hover:border-gray-600;
+           dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white dark:hover:border-gray-600;
   }
 
   /* 3. Кнопка-иконка (Круглая)
