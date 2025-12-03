@@ -1,16 +1,63 @@
-# React + Vite
+🍕 Crostini Pizza
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современное Single Page Application (SPA) для заказа пиццы, разработанное с использованием React и Tailwind CSS.
 
-Currently, two official plugins are available:
+🚀 Открыть Демо Версию
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+(Если картинка не отображается, убедитесь, что файл preview.jpg лежит в папке public)
 
-## React Compiler
+🛠 Технологии (Tech Stack)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Core: React 18
 
-## Expanding the ESLint configuration
+Build Tool: Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Styling: Tailwind CSS v4
+
+Icons: Lucide React
+
+Deployment: GitHub Pages
+
+✨ Основной функционал
+
+🌗 Темная и Светлая тема: Полная поддержка переключения тем с сохранением стилистики.
+
+🛒 Реактивная корзина: Добавление товаров, изменение количества, автоматический подсчет итоговой суммы.
+
+📱 Полная адаптивность: Интерфейс отлично выглядит на мобильных устройствах, планшетах и десктопах.
+
+🎨 UI/UX:
+
+Стеклянный морфизм (Glassmorphism) в шапке.
+
+Красивые градиентные кнопки с анимацией.
+
+Модальные окна с подробной информацией о товаре.
+
+Имитация процесса оформления заказа и трекинга доставки.
+
+📦 Установка и запуск локально
+
+Если вы хотите запустить этот проект у себя на компьютере:
+
+Клонируйте репозиторий:
+
+git clone [https://github.com/tegast/pizza-site.git](https://github.com/tegast/pizza-site.git)
+
+
+Перейдите в папку проекта:
+
+cd pizza-site
+
+
+Установите зависимости:
+
+npm install
+
+
+Запустите сервер разработки:
+
+npm run dev
+
+
+Разработано by tegast
