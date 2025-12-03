@@ -222,8 +222,8 @@ const InfoModal = ({ isOpen, onClose, title, icon: Icon, children }) => {
     <div className="fixed inset-0 z-[60] flex items-center justify-center px-4">
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose}></div>
       <div className="bg-white dark:bg-gray-800 rounded-2xl w-full max-w-lg p-6 relative z-10 shadow-2xl animate-[fadeIn_0.3s_ease-out]">
-        <button onClick={onClose} className="absolute top-4 right-4 p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors">
-          <X size={20} className="text-gray-500 dark:text-gray-400" />
+        <button onClick={onClose} className="btn-icon absolute top-4 right-4 bg-white/50 dark:bg-gray-700/50">
+          <X size={20} />
         </button>
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 dark:text-orange-400">
@@ -234,7 +234,7 @@ const InfoModal = ({ isOpen, onClose, title, icon: Icon, children }) => {
         <div className="text-gray-600 dark:text-gray-300 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
           {children}
         </div>
-        <button onClick={onClose} className="w-full mt-6 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-xl font-bold transition-colors">
+        <button onClick={onClose} className="btn btn-secondary w-full mt-6 py-3">
           Понятно
         </button>
       </div>
@@ -260,7 +260,7 @@ const PaymentForm = ({ total, onPay, onCancel }) => {
     <div className="p-6 h-full flex flex-col">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white">Оформление заказа</h2>
-        <button onClick={onCancel} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full text-gray-500 dark:text-gray-400">
+        <button onClick={onCancel} className="btn-icon">
           <X size={24} />
         </button>
       </div>
@@ -328,7 +328,7 @@ const PaymentForm = ({ total, onPay, onCancel }) => {
           <button 
             type="submit" 
             disabled={isProcessing}
-            className="w-full py-4 bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300 dark:disabled:bg-gray-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-orange-200 dark:hover:shadow-none transition-all active:scale-95 flex items-center justify-center gap-2"
+            className="btn btn-primary w-full py-4 text-lg"
           >
             {isProcessing ? 'Обработка...' : `Оплатить заказ`}
           </button>
@@ -397,7 +397,7 @@ const OrderTracker = ({ onClose }) => {
       {step === 4 && (
         <button 
           onClick={onClose}
-          className="mt-12 px-8 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl font-bold hover:scale-105 transition-transform"
+          className="btn btn-primary w-full mt-12 py-3"
         >
           Сделать новый заказ
         </button>
@@ -520,7 +520,7 @@ export default function App() {
                 {/* Theme Toggle */}
                 <button 
                   onClick={() => setIsDarkMode(!isDarkMode)}
-                  className="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                  className="btn-icon"
                 >
                   {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
                 </button>
@@ -528,7 +528,7 @@ export default function App() {
                 {/* Cart Trigger */}
                 <button 
                   onClick={() => setIsCartOpen(true)}
-                  className="relative group bg-gray-100 dark:bg-gray-800 hover:bg-orange-500 dark:hover:bg-orange-500 hover:text-white dark:hover:text-white text-gray-600 dark:text-gray-300 transition-all duration-300 p-2.5 rounded-full"
+                  className="btn-icon"
                 >
                   <ShoppingBag size={20} />
                   {cartCount > 0 && (
@@ -557,7 +557,7 @@ export default function App() {
                   </p>
                   <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                     <div className="rounded-md shadow">
-                      <a href="#menu" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-orange-600 hover:bg-orange-700 md:py-4 md:text-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 shadow-orange-500/30">
+                      <a href="#menu" className="btn btn-primary px-8 py-3 md:py-4 md:text-lg">
                         Заказать
                       </a>
                     </div>
@@ -584,10 +584,10 @@ export default function App() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-5 py-2 rounded-full whitespace-nowrap text-sm font-medium transition-all duration-300 transform ${
+                  className={`px-5 py-2 ${
                     activeCategory === cat.id
-                      ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-lg scale-105'
-                      : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
+                      ? 'btn btn-tab-active'
+                      : 'btn btn-secondary'
                   }`}
                 >
                   {cat.name}
@@ -638,7 +638,7 @@ export default function App() {
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50 dark:border-gray-700">
                     <div className="text-lg font-bold text-gray-900 dark:text-white">от {product.price} ₽</div>
                     <button 
-                      className="bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 hover:bg-orange-100 dark:hover:bg-orange-900/40 px-4 py-2 rounded-xl text-sm font-bold transition-colors"
+                      className="btn btn-secondary px-4 py-2 text-sm"
                     >
                       Выбрать
                     </button>
@@ -773,9 +773,9 @@ export default function App() {
             <div className="bg-white dark:bg-gray-800 rounded-3xl w-full max-w-4xl overflow-hidden shadow-2xl relative z-10 flex flex-col md:flex-row animate-[fadeIn_0.3s_ease-out]">
               <button 
                 onClick={closeProductModal}
-                className="absolute top-4 right-4 z-20 p-2 bg-white/80 dark:bg-gray-700/80 rounded-full hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+                className="btn-icon absolute top-4 right-4 z-20 bg-white/80 dark:bg-gray-700/80"
               >
-                <X size={24} className="text-gray-500 dark:text-gray-300" />
+                <X size={24} />
               </button>
               
               {/* Image Side */}
@@ -846,7 +846,7 @@ export default function App() {
                 {/* Action */}
                 <button 
                   onClick={addToCart}
-                  className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-orange-200 dark:hover:shadow-none transition-all transform active:scale-95 flex items-center justify-between px-6"
+                  className="btn btn-primary w-full py-4 text-lg justify-between px-6"
                 >
                   <span>В корзину</span>
                   <span>{selectedProduct.price + currentSize.priceMod} ₽</span>
@@ -872,7 +872,7 @@ export default function App() {
                   <h2 className="text-xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2">
                     Корзина <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-xs px-2 py-1 rounded-full">{cartCount}</span>
                   </h2>
-                  <button onClick={closeCartDrawer} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors text-gray-500 dark:text-gray-400">
+                  <button onClick={closeCartDrawer} className="btn-icon">
                     <X size={24} />
                   </button>
                 </div>
@@ -925,7 +925,7 @@ export default function App() {
                     </div>
                     <button 
                       onClick={() => setCheckoutStep('payment')}
-                      className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-orange-200 dark:hover:shadow-none transition-all active:scale-95 flex items-center justify-center gap-2"
+                      className="btn btn-primary w-full py-4 text-lg justify-center gap-2"
                     >
                       Оформить заказ <ChevronRight size={20} />
                     </button>
